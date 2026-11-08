@@ -219,7 +219,7 @@ const cart = {
     renderCartSummary(this.items, this.getTotal(), this.getItemCount());
 
     // Optional -- not required. Save after every cart change:
-    localStorage.setItem("cart", JSON.stringify(this.items));
+    // localStorage.setItem("cart", JSON.stringify(this.items));
   },
 };
 
@@ -457,7 +457,7 @@ sortSelect.addEventListener("change", (event) => {
   currentSort = event.target.value;
 
   // Optional — save the user's sort preference so it persists across page reloads:
-  localStorage.setItem("savedSort", currentSort);
+  // localStorage.setItem("savedSort", currentSort);
   
   renderProducts(getVisibleProducts());
 });
@@ -522,11 +522,11 @@ checkoutForm.addEventListener("submit", (event) => {
 
 /* ---- Kick things off ----------------------------------------------------- */
 // Optional -- Check for a saved sorting preference and visually update the dropdown
-const savedSort = localStorage.getItem("savedSort");
-if (savedSort) {
-  currentSort = savedSort;
-  sortSelect.value = savedSort;
-}
+// const savedSort = localStorage.getItem("savedSort");
+// if (savedSort) {
+//   currentSort = savedSort;
+//   sortSelect.value = savedSort;
+// }
 // Optional -- Check for a saved category preference and visually update the dropdown
 // const savedCategory = localStorage.getItem("savedCategory");
 // if (savedCategory) {
@@ -537,9 +537,9 @@ if (savedSort) {
 loadProducts();
 
 // Optional — load once when the page starts:
-const saved = localStorage.getItem("cart");
-if (saved) {
-  cart.items = JSON.parse(saved);
-}
+// const saved = localStorage.getItem("cart");
+// if (saved) {
+//   cart.items = JSON.parse(saved);
+// }
 
 cart.render(); // shows "Your cart is empty" immediately, before anything is added
